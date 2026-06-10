@@ -1,8 +1,13 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 import { contact, navItems, parentSite } from "../../data/site";
 import WhatsAppIcon from "../ui/WhatsAppIcon";
 
 export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <header className="site-header">
       <div className="top-bar">
@@ -40,17 +45,55 @@ export default function Header() {
             </Link>
           ))}
         </nav>
-        <details className="mobile-nav">
-          <summary>Menu</summary>
-          <div>
-            {navItems.map((item) => (
-              <Link href={item.href} key={item.href}>
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </details>
+        {/* Mobile Menu Button */}
+        <button 
+          className="mobile-menu-btn" 
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <svg 
+            width="24" 
+            height="24" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="currentColor" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            {isMenuOpen ? (
+              <>
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </>
+            ) : (
+              <>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </>
+            )}
+          </svg>
+        </button>
       </div>
+      {/* Mobile Menu Dropdown */}
+      {isMenuOpen && (
+        <div className="mobile-menu-dropdown">
+          <div className="container">
+            <nav className="mobile-nav-links">
+              {navItems.map((item) => (
+                <Link 
+                  href={item.href} 
+                  key={item.href} 
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+        </div>
+      )}
     </header>
   );
 }

@@ -143,7 +143,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div style={{ marginTop: 40, display: "flex", gap: 16 }}>
+                <div style={{ marginTop: 40, display: "flex", gap: 16, flexWrap: "wrap" }}>
                   <Link href="/contact" className="btn btn-accent">Book a free consultation</Link>
                   <Link href="/services" className="btn btn-outline" style={{ color: 'var(--teal-deep)', borderColor: 'var(--teal)' }}>View services</Link>
                 </div>
@@ -189,7 +189,7 @@ export default function Home() {
                   ]}
                 />
 
-                <div style={{ marginTop: 40, display: "flex", gap: 16, alignItems: "center" }}>
+                <div style={{ marginTop: 40, display: "flex", gap: 16, alignItems: "center", flexWrap: "wrap" }}>
                   <Link href="/contact" className="btn btn-accent">Book a free consultation</Link>
                   <DownloadChecklist />
                 </div>

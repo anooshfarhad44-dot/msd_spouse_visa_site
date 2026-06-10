@@ -54,7 +54,7 @@ export default function EligibilityPageContent() {
           <Checklist items={eligibilityRequirements} />
         </Reveal>
 
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 28 }}>
+        <div className="eligibility-info-grid" style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 20, marginTop: 28 }}>
           <Reveal delay={120}>
             <div className="info-card">
               <h3>Common documents to prepare</h3>

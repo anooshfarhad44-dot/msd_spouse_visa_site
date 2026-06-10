@@ -145,7 +145,7 @@ export default function QuickEligibilityCheck() {
 
     function renderStepActions(continueButton: ReactNode) {
         return (
-            <div style={{ marginTop: 12, display: "flex", gap: 8, alignItems: "center", flexWrap: "wrap" }}>
+            <div className="checker-actions">
                 {renderBackButton()}
                 {continueButton}
             </div>
@@ -172,9 +172,9 @@ export default function QuickEligibilityCheck() {
     function renderOptions(qid: string, options: string[] | undefined, name: string, answerKey: string) {
         if (!options) return null;
         return (
-            <div style={{ display: "grid", gap: 8 }}>
+            <div className="checker-option-grid">
                 {options.map((opt) => (
-                    <label key={opt} className="checklist-item">
+                    <label key={opt} className="checklist-item checker-option">
                         <input
                             type="radio"
                             name={name}
@@ -256,7 +256,7 @@ export default function QuickEligibilityCheck() {
     }
 
     return (
-        <section className="section page-section">
+        <section className="section page-section eligibility-checker-page">
             <div className="container narrow">
                 <h1>MSD Solicitors — Spouse Visa Eligibility Checker</h1>
                 <p className="lead">This guided tool shows whether you are likely eligible for a UK spouse visa based on your answers.</p>

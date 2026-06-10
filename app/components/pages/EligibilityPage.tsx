@@ -15,12 +15,35 @@ export default function EligibilityPageContent() {
         </Reveal>
 
         <Reveal delay={60}>
-          <div className="eligibility-cta" style={{ marginTop: 26 }}>
-            <h3>Ready to get started?</h3>
-            <p>Check if you're eligible in just 2 minutes — completely free, no obligation.</p>
-            <div className="cta-actions" style={{ marginTop: 14 }}>
-              <Link href="/eligibility/check" className="btn btn-accent">Check My Eligibility Now</Link>
-              <a href="tel:01615030553" className="download-btn" style={{ marginLeft: 12 }}>or call us: 0161 503 0553</a>
+          <div className="eligibility-cta">
+            <div className="cta-badge">
+              ✓ Free Eligibility Assessment
+            </div>
+
+            <h3>Ready to Find Out If You Qualify?</h3>
+
+            <p>
+              Complete our quick eligibility check in under 2 minutes.
+              No fees, no obligation, and instant guidance on your options.
+            </p>
+
+            <div className="cta-benefits">
+              <span>✓ Takes 2 Minutes</span>
+              <span>✓ 100% Free</span>
+              <span>✓ No Obligation</span>
+            </div>
+
+            <div className="cta-actions">
+              <Link
+                href="/eligibility/check"
+                className="btn btn-accent cta-primary"
+              >
+                Check My Eligibility
+              </Link>
+
+              <a href="tel:01615030553" className="cta-phone">
+                📞 0161 503 0553
+              </a>
             </div>
           </div>
         </Reveal>

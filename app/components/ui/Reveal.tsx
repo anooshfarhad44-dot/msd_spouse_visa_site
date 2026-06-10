@@ -13,7 +13,10 @@ export default function Reveal({ children, className = "", delay = 0 }: Props) {
 
   useEffect(() => {
     const el = ref.current;
-    if (!el || typeof IntersectionObserver === "undefined") return;
+    if (!el || typeof IntersectionObserver === "undefined") {
+      el?.classList.add("is-visible");
+      return;
+    }
 
     const obs = new IntersectionObserver(
       (entries) => {

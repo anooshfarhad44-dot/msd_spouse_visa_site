@@ -1,0 +1,84 @@
+{
+  "trees": [
+    {
+      "title": "Core eligibility",
+      "nodes": [
+        { "id": "sponsor", "label": "Sponsor status" },
+        { "id": "relationship", "label": "Relationship" },
+        { "id": "age", "label": "Age & intent" },
+        { "id": "finance", "label": "Financials" },
+        { "id": "health", "label": "Health & English" },
+        { "id": "summary", "label": "Summary" }
+      ]
+    },
+    {
+      "title": "Documents & checks",
+      "nodes": [
+        { "id": "documents", "label": "Documents to prepare" },
+        { "id": "english", "label": "English proof" },
+        { "id": "tb", "label": "TB test" },
+        { "id": "fees", "label": "Fees & payment" }
+      ]
+    }
+  ],
+  "steps": [
+    {
+      "id": "sponsor",
+      "title": "Sponsor status",
+      "description": "Who holds the immigration status of the UK resident sponsor?",
+      "options": [
+        { "value": "british", "label": "British citizenship" },
+        { "value": "settled", "label": "Settled status (ILR)" },
+        { "value": "eu_settled", "label": "EU Settled/Pre-settled" },
+        { "value": "other", "label": "Other (may not qualify)" }
+      ]
+    },
+    {
+      "id": "relationship",
+      "title": "Relationship",
+      "description": "What is your relationship to the sponsor?",
+      "options": [
+        { "value": "married", "label": "Married / civil partnership" },
+        { "value": "cohabiting_2yrs", "label": "Living together 2+ years" },
+        { "value": "fiance", "label": "Fiancé / proposed civil partner" },
+        { "value": "other", "label": "Other / unsure" }
+      ]
+    },
+    {
+      "id": "age",
+      "title": "Age & intent",
+      "description": "Are both you and your partner 18 or over, and do you intend to live together permanently in the UK?",
+      "options": [
+        { "value": "yes", "label": "Yes, both 18+ and intend to live together" },
+        { "value": "no", "label": "No / not sure" }
+      ]
+    },
+    {
+      "id": "finance",
+      "title": "Financials",
+      "description": "Financial requirement — does the sponsor meet income or savings thresholds?",
+      "options": [
+        { "value": "income_yes", "label": "Yes — sponsor meets income threshold" },
+        { "value": "savings_yes", "label": "No income but sufficient savings" },
+        { "value": "benefits_exempt", "label": "Exempt (in receipt of qualifying benefits)" },
+        { "value": "none", "label": "None of the above / unsure" }
+      ]
+    },
+    {
+      "id": "health",
+      "title": "Health & English",
+      "description": "Health and English requirements",
+      "options": [
+        { "value": "english_yes", "label": "Applicant can meet English requirement (SELT or exemption)" },
+        { "value": "tb_yes", "label": "Applicant already has TB test certificate where required" },
+        { "value": "tb_no", "label": "Applicant will need a TB test (if from listed country)" }
+      ]
+    },
+    {
+      "id": "summary",
+      "title": "Summary",
+      "description": "Summary & next steps",
+      "options": []
+    }
+  ]
+}

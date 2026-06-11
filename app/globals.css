@@ -3151,6 +3151,18 @@ details[open] { box-shadow: var(--shadow-soft); }
   display: inline-block !important;
 }
 
+.contact-form-wrapper {
+  padding: 20px;
+}
+
+.form-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: var(--text);
+  text-align: center;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -3229,6 +3241,8 @@ details[open] { box-shadow: var(--shadow-soft); }
   .site-footer * {
     min-width: 0;
   }
+
+  
 }
 
 @media (max-width: 420px) {

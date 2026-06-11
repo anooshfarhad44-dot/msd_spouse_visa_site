@@ -3048,6 +3048,154 @@ details[open] { box-shadow: var(--shadow-soft); }
     height: 42px;
   }
 
+/* === Toast & Form Validation === */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999;
+  animation: slideIn 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.toast {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  padding: 20px 24px;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(16, 185, 129, 0.35), 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: 480px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.toast-icon {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.toast-content {
+  flex: 1;
+}
+
+.toast-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0 0 4px 0;
+  line-height: 1.2;
+}
+
+.toast-message {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  opacity: 0.95;
+}
+
+.toast-close-btn {
+  background: rgba(255, 255, 255, 0.18);
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+  margin-top: -2px;
+}
+
+.toast-close-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+/* Form Validation */
+.contact-form label {
+  display: grid;
+  gap: 8px;
+  font-weight: 800;
+  color: var(--teal-dark);
+}
+
+.contact-form label > span:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.required-asterisk {
+  color: #ff0000 !important;
+  font-size: 1.6rem !important;
+  line-height: 1 !important;
+  font-weight: bold !important;
+  display: inline-block !important;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 13px 14px;
+  color: var(--ink);
+  background: var(--soft);
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: var(--teal);
+  background: var(--white);
+  box-shadow: 0 0 0 4px rgba(244, 196, 0, 0.12);
+}
+
+.contact-form .input-error {
+  border-color: #dc2626;
+  background: rgba(220, 38, 38, 0.05);
+}
+
+.contact-form .error-message {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  line-height: 1.4;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Disabled button style */
+.contact-form button[type="submit"]:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
   .contact-details p,
   .whatsapp-link-contact {
     align-items: flex-start;

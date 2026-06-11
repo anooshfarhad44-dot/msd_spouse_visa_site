@@ -2,11 +2,19 @@ import Link from "next/link";
 
 export default function CtaStrip() {
   return (
-    <section className="cta-strip">
-      <div className="container strip-inner">
-        <p>Book your free initial spouse visa case review with a legal expert today</p>
-        <Link href="/contact" className="strip-link">
-          Speak to an advisor
+    <section className="bg-gradient-to-r from-[#0f6b72] to-[#073f47]">
+      <div className="w-full max-w-[1120px] mx-auto px-4 min-h-[86px] flex items-center justify-between gap-5 py-6 flex-wrap">
+        <div>
+          <strong className="text-white font-extrabold text-lg block">Ready to start your application?</strong>
+          <div className="mt-1.5 text-white/95 text-sm">
+            Book a free consultation with our immigration team today.
+          </div>
+        </div>
+        <Link
+          href="/contact"
+          className="inline-flex items-center min-h-[48px] px-7 py-3 bg-[#f4c400] text-[#062f36] rounded-full font-extrabold shadow-[0_14px_30px_rgba(0,0,0,0.12)] hover:-translate-y-0.5 transition-all duration-200"
+        >
+          Book a free consultation
         </Link>
       </div>
     </section>

@@ -19,10 +19,7 @@ export default function Accordion({ items, singleOpen = false }: Props) {
     setOpen((s) => {
       const next = { ...s };
       const isOpen = !!next[i];
-      if (singleOpen) {
-        // close all then open this if was closed
-        return isOpen ? {} : { [i]: true };
-      }
+      if (singleOpen) return isOpen ? {} : { [i]: true };
       if (isOpen) delete next[i];
       else next[i] = true;
       return next;
@@ -30,24 +27,43 @@ export default function Accordion({ items, singleOpen = false }: Props) {
   }
 
   return (
-    <div className="accordion-list">
+    <div className="flex flex-col gap-3 my-8 w-full">
       {items.map((it, i) => (
-        <div className={`accordion-item ${open[i] ? "is-open" : ""}`} key={i}>
+        <div
+          key={i}
+          className={`w-full bg-white border rounded-2xl overflow-hidden transition-all duration-300 ${
+            open[i] ? "border-[#0f6b72] shadow-[0_10px_30px_rgba(6,47,54,0.06)]" : "border-[#dbe7e9]"
+          }`}
+        >
           <button
             type="button"
-            className="accordion-toggle"
             aria-expanded={!!open[i]}
             onClick={() => toggle(i)}
+            className="w-full flex items-center gap-4 px-6 py-5 bg-transparent border-0 cursor-pointer text-left hover:bg-[#062f36]/[0.02] transition-colors"
           >
-            <span className="accordion-icon" aria-hidden>
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <span
+              className={`w-8 h-8 grid place-items-center bg-[#f4c400] text-[#062f36] rounded-full shrink-0 transition-transform duration-300 ${
+                open[i] ? "rotate-180" : ""
+              }`}
+              aria-hidden
+            >
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
-            <span className="accordion-title">{it.title}</span>
+            <span className="text-base font-bold text-[#062f36] font-[var(--font-montserrat)] text-left">
+              {it.title}
+            </span>
           </button>
-          <div className="accordion-panel" aria-hidden={!open[i]}>
-            <div className="accordion-content">{it.content}</div>
+          <div
+            className={`transition-all duration-300 overflow-hidden ${
+              open[i] ? "max-h-[1000px] py-3" : "max-h-0"
+            }`}
+            aria-hidden={!open[i]}
+          >
+            <div className="pb-6 pl-[72px] pr-6 text-[#62777d] leading-relaxed text-sm">
+              {it.content}
+            </div>
           </div>
         </div>
       ))}

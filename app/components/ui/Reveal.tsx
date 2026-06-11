@@ -14,7 +14,10 @@ export default function Reveal({ children, className = "", delay = 0 }: Props) {
   useEffect(() => {
     const el = ref.current;
     if (!el || typeof IntersectionObserver === "undefined") {
-      el?.classList.add("is-visible");
+      if (el) {
+        el.style.opacity = "1";
+        el.style.transform = "none";
+      }
       return;
     }
 
@@ -22,7 +25,9 @@ export default function Reveal({ children, className = "", delay = 0 }: Props) {
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            const target = entry.target as HTMLElement;
+            target.style.opacity = "1";
+            target.style.transform = "none";
             obs.unobserve(entry.target);
           }
         });
@@ -37,9 +42,12 @@ export default function Reveal({ children, className = "", delay = 0 }: Props) {
   return (
     <div
       ref={ref}
-      data-delay={delay}
-      style={{ transitionDelay: `${delay}ms` }}
-      className={`reveal ${className}`}
+      style={{
+        opacity: 0,
+        transform: "translateY(18px)",
+        transition: `opacity 700ms cubic-bezier(.16,.84,.28,1) ${delay}ms, transform 700ms cubic-bezier(.16,.84,.28,1) ${delay}ms`,
+      }}
+      className={className}
     >
       {children}
     </div>

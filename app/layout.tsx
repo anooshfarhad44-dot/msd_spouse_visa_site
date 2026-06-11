@@ -14,7 +14,7 @@ const inter = Inter({
 const montserrat = Montserrat({
   variable: "--font-montserrat",
   subsets: ["latin"],
-  weight: ["600", "700"],
+  weight: ["600", "700", "800"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className={`${inter.variable} ${montserrat.variable} h-full antialiased`}>
-      <body suppressHydrationWarning className="min-h-full flex flex-col">
+      <body suppressHydrationWarning className="min-h-full flex flex-col font-[var(--font-inter)] bg-white text-[#182d32] overflow-x-hidden">
         <Header />
         <main className="flex-1">{children}</main>
         <FloatingWhatsApp />

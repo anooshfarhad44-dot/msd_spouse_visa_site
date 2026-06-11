@@ -2,11 +2,21 @@
 
 import { useEffect } from "react";
 
-export default function HubspotForm() {
+declare global {
+  interface Window {
+    hbspt: any;
+  }
+}
+
+interface HubSpotFormProps {
+  targetId?: string;
+}
+
+export default function HubspotForm({ targetId = "hubspot-form-container-home" }: HubSpotFormProps) {
   useEffect(() => {
     const loadForm = () => {
       if (window.hbspt) {
-        const container = document.getElementById("hubspot-form-container-home");
+        const container = document.getElementById(targetId);
 
         if (container) {
           container.innerHTML = "";
@@ -15,7 +25,7 @@ export default function HubspotForm() {
             portalId: "8559434",
             formId: "fbd1deba-5122-437b-a2f7-65fed9ae1b77",
             region: "na1",
-            target: "#hubspot-form-container-home",
+            target: `#${targetId}`,
           });
         }
       }
@@ -31,11 +41,11 @@ export default function HubspotForm() {
     } else {
       loadForm();
     }
-  }, []);
+  }, [targetId]);
 
   return (
     <div className="contact-form">
-      <div id="hubspot-form-container-home"></div>
+      <div id={targetId}></div>
     </div>
   );
 }

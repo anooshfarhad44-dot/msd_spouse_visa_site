@@ -17,39 +17,46 @@ export default function ServiceCards({ items, twoColumns = false }: ServiceCards
 
   useEffect(() => {
     if (!root.current) return;
-    const nodes = Array.from(root.current.querySelectorAll<HTMLElement>(".service-card"));
+    const nodes = Array.from(root.current.querySelectorAll<HTMLElement>("[data-card]"));
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target.classList.add("is-visible");
+            const el = entry.target as HTMLElement;
+            el.style.opacity = "1";
+            el.style.transform = "none";
           }
         });
       },
       { threshold: 0.12 }
     );
-
     nodes.forEach((n, i) => {
-      // set a staggered delay
-      n.style.transitionDelay = `${i * 100}ms`;
-      n.classList.add("reveal");
+      n.style.opacity = "0";
+      n.style.transform = "translateY(18px)";
+      n.style.transition = `opacity 600ms ease ${i * 100}ms, transform 600ms ease ${i * 100}ms`;
       observer.observe(n);
     });
-
     return () => observer.disconnect();
   }, [items]);
 
   return (
-    <div ref={root} className={`card-grid${twoColumns ? " two-card-grid" : ""}`}>
-      {items.map((item, idx) => (
-        <article className="service-card" key={item.title} aria-hidden={false}>
-          <div style={{ display: "flex", gap: 12, alignItems: "center" }}>
-            <div style={{ width: 52, height: 52, borderRadius: 12, background: "linear-gradient(135deg, #f4c400, #0f6b72)", display: "grid", placeItems: "center", color: "white", fontWeight: 800 }}>
-              {item.title.split(" ").slice(0,2).map(word=>word[0]).join("")}
+    <div
+      ref={root}
+      className={`grid gap-5 mt-9 ${twoColumns ? "grid-cols-1 sm:grid-cols-2" : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"}`}
+    >
+      {items.map((item) => (
+        <article
+          data-card
+          key={item.title}
+          className="relative overflow-hidden p-7 bg-white border border-[#dbe7e9] rounded-2xl shadow-[0_18px_50px_rgba(6,47,54,0.08)] hover:-translate-y-1 hover:border-[#0f6b72]/30 hover:shadow-[0_24px_70px_rgba(6,47,54,0.14)] transition-all duration-200 before:content-[''] before:absolute before:inset-y-0 before:left-0 before:w-1 before:bg-gradient-to-b before:from-[#f4c400] before:to-[#0f6b72]"
+        >
+          <div className="flex gap-3 items-center">
+            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#f4c400] to-[#0f6b72] grid place-items-center text-white font-extrabold text-sm shrink-0">
+              {item.title.split(" ").slice(0, 2).map((w) => w[0]).join("")}
             </div>
-            <h3 style={{ margin: 0 }}>{item.title}</h3>
+            <h3 className="m-0 text-xl font-bold text-[#073f47]">{item.title}</h3>
           </div>
-          <p style={{ marginTop: 12 }}>{item.text}</p>
+          <p className="mt-3 text-[#62777d] leading-relaxed">{item.text}</p>
         </article>
       ))}
     </div>

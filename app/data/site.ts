@@ -281,7 +281,7 @@ export const processSteps = [
 
 
 
-const reviewsData = [
+export const reviewsData = [
   {
     name: "Osama Shinwari",
     date: "Nov 3, 2025",

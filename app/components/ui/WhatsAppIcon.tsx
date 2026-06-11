@@ -2,7 +2,7 @@ type WhatsAppIconProps = {
   className?: string;
 };
 
-export default function WhatsAppIcon({ className = "whatsapp-icon" }: WhatsAppIconProps) {
+export default function WhatsAppIcon({ className = "w-6 h-6" }: WhatsAppIconProps) {
   return (
     <svg
       className={className}

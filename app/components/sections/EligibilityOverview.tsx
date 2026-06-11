@@ -1,90 +1,92 @@
-import React from 'react';
-import Link from 'next/link';
+import Link from "next/link";
 
-const EligibilityOverview = () => {
-  const requirements = [
-    "You and your partner are both over the age of 18 at the time of submitting the application.",
-    "You are not in a forbidden relationship with your partner (i.e. too closely related).",
-    "You have met your partner in person.",
-    "You are in a genuine and subsisting marriage.",
-    "You were free to marry (i.e. any previous marriages have been legally ended).",
-    "You intend to live together with your partner permanently.",
-    "The sponsoring partner must earn more than £18,600 per year or have enough savings to sponsor you (the income threshold is higher if dependant children are also being sponsored).",
-    "You can provide proof of sufficient knowledge of the English language."
-  ];
+const requirements = [
+  "You and your partner are both over the age of 18 at the time of submitting the application.",
+  "You are not in a forbidden relationship with your partner (i.e. too closely related).",
+  "You have met your partner in person.",
+  "You are in a genuine and subsisting marriage.",
+  "You were free to marry (i.e. any previous marriages have been legally ended).",
+  "You intend to live together with your partner permanently.",
+  "The sponsoring partner must earn more than £18,600 per year or have enough savings to sponsor you.",
+  "You can provide proof of sufficient knowledge of the English language.",
+];
 
-  const requirementIcons = [
-    "👤",
-    "🚫",
-    "🤝",
-    "❤️",
-    "📄",
-    "🏠",
-    "💰",
-    "🗣️"
-  ];
+const requirementIcons = ["👤", "🚫", "🤝", "❤️", "📄", "🏠", "💰", "🗣️"];
 
+export default function EligibilityOverview() {
   return (
-    <section className="section eligibility-overview-section">
-      <div className="container">
-        <div className="eligibility-header">
-          <h2 className="eligibility-title">
-            UK <span className="gold-text">Spouse</span> Visa Eligibility
+    <section className="py-20 bg-[#f9fbfc] overflow-x-hidden">
+      <div className="w-full max-w-[1120px] mx-auto px-4">
+        {/* Header */}
+        <div className="text-center mb-10">
+          <h2 className="text-4xl md:text-5xl font-extrabold text-[#062f36] font-[var(--font-montserrat)] m-0">
+            UK <span className="text-[#f4c400]">Spouse</span> Visa Eligibility
           </h2>
-          <div className="title-divider"></div>
+          <div className="w-14 h-0.5 bg-gradient-to-r from-[#0f6b72] to-[#f4c400] rounded-full mx-auto mt-4" />
         </div>
 
-        <p className="eligibility-subtitle">
-          If you wish to join your Spouse or Partner in the United Kingdom, under the Appendix FM Immigration visa route and wish to be considered under this Visa category, you must
+        <p className="text-center text-lg text-[#062f36] max-w-[900px] mx-auto mb-12 leading-relaxed">
+          If you wish to join your Spouse or Partner in the United Kingdom, under the Appendix FM
+          Immigration visa route and wish to be considered under this Visa category, you must
         </p>
 
-        <div className="eligibility-requirements-grid">
+        {/* Requirements grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mb-12 max-w-[1200px] mx-auto">
           {requirements.map((req, index) => (
-            <div key={index} className="eligibility-requirement-box">
-              <div className="req-icon-wrapper">
-                <span className="req-icon">{requirementIcons[index]}</span>
+            <div
+              key={index}
+              className="flex items-center gap-4 p-4 md:p-5 bg-white border-[1.5px] border-[#0f6b72] rounded-2xl font-bold text-[#062f36] shadow-[0_4px_12px_rgba(6,47,54,0.04)] hover:-translate-y-1 hover:border-[#f4c400] hover:shadow-[0_12px_32px_rgba(6,47,54,0.08)] transition-all duration-300"
+            >
+              <div className="w-12 h-12 grid place-items-center bg-[#f4c400] rounded-xl shrink-0">
+                <span className="text-2xl">{requirementIcons[index]}</span>
               </div>
-              <span className="req-text">{req}</span>
+              <span className="text-sm leading-relaxed">{req}</span>
             </div>
           ))}
         </div>
 
-        {/* Eligibility Checker Button with Description */}
-        <div className="eligibility-checker-btn-wrapper">
-          <div className="checker-benefits">
-            <span>⚡ Takes 2 Minutes</span>
-            <span>💎 100% Free</span>
-            <span>🛡️ No Obligation</span>
+        {/* CTA */}
+        <div className="text-center flex flex-col items-center gap-5 mb-14">
+          <div className="flex gap-3 flex-wrap justify-center">
+            {["⚡ Takes 2 Minutes", "💎 100% Free", "🛡️ No Obligation"].map((b) => (
+              <span
+                key={b}
+                className="text-sm font-bold text-[#0f6b72] bg-[#f4c400]/10 px-4 py-1.5 rounded-full border border-[#f4c400]/30"
+              >
+                {b}
+              </span>
+            ))}
           </div>
-          <Link href="/eligibility/check" className="eligibility-checker-btn">
+          <Link
+            href="/eligibility/check"
+            className="inline-flex items-center justify-center px-12 py-4 bg-gradient-to-br from-[#f4c400] to-[#f6a700] text-[#062f36] text-xl font-extrabold font-[var(--font-montserrat)] rounded-full shadow-[0_12px_36px_rgba(244,196,0,0.3)] hover:-translate-y-1 hover:shadow-[0_18px_48px_rgba(244,196,0,0.4)] transition-all duration-300"
+          >
             Check Your Eligibility Now
           </Link>
-          <p className="checker-hint">Find out instantly if you meet the core requirements for a UK Spouse Visa.</p>
+          <p className="text-sm text-[#556b6e] font-semibold">
+            Find out instantly if you meet the core requirements for a UK Spouse Visa.
+          </p>
         </div>
 
-        <div className="eligibility-text-content">
-          <div className="text-card">
-            <p>
-              Applying for a UK Spouse Visa can be a complex process, and having the right legal support can significantly improve your chances of success.{" "}
-              <a
-                href="https://www.msdsolicitors.co.uk/"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ fontWeight: 'bold', color: '#f4c400', textDecoration: 'underline', textUnderlineOffset: '4px' }}
-              >
-                MSD Solicitors
-              </a>{" "}
-              is a highly regarded UK law firm with extensive experience in immigration matters, helping individuals and families navigate the UK Spouse Visa process with confidence and clarity.
-            </p>
-
-            <p style={{ marginTop: '20px' }}>
-              Their dedicated team of immigration solicitors and caseworkers provides tailored legal guidance throughout every stage of the application, from document preparation and eligibility assessments to submission and ongoing support. With a strong focus on accuracy, compliance, and client care, MSD Solicitors is committed to delivering professional legal services designed to maximise the prospects of a successful outcome.
-            </p>
-          </div>
+        {/* Text card */}
+        <div className="max-w-[1100px] mx-auto p-10 bg-white rounded-2xl border border-[#dbe7e9] shadow-[0_12px_48px_rgba(6,47,54,0.08)] text-lg leading-[1.8] text-[#2a2a2a]">
+          <p>
+            Applying for a UK Spouse Visa can be a complex process, and having the right legal support can significantly improve your chances of success.{" "}
+            <a
+              href="https://www.msdsolicitors.co.uk/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-extrabold text-[#f4c400] underline underline-offset-4"
+            >
+              MSD Solicitors
+            </a>{" "}
+            is a highly regarded UK law firm with extensive experience in immigration matters, helping individuals and families navigate the UK Spouse Visa process with confidence and clarity.
+          </p>
+          <p className="mt-5">
+            Their dedicated team of immigration solicitors and caseworkers provides tailored legal guidance throughout every stage of the application, from document preparation and eligibility assessments to submission and ongoing support. With a strong focus on accuracy, compliance, and client care, MSD Solicitors is committed to delivering professional legal services designed to maximise the prospects of a successful outcome.
+          </p>
         </div>
       </div>
     </section>
   );
-};
-
-export default EligibilityOverview;
+}

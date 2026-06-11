@@ -7,11 +7,11 @@ export default function FloatingWhatsApp() {
       href={contact.whatsappHref}
       target="_blank"
       rel="noopener noreferrer"
-      className="floating-whatsapp"
       aria-label="Message us on WhatsApp"
+      className="fixed right-5 bottom-5 z-40 inline-flex items-center gap-2.5 min-h-[58px] px-5 py-3 rounded-full bg-[#25d366] text-[#073f47] font-black shadow-[0_18px_42px_rgba(6,47,54,0.28)] hover:-translate-y-0.5 hover:shadow-[0_24px_50px_rgba(6,47,54,0.34)] transition-all duration-200 md:flex"
     >
-      <WhatsAppIcon />
-      <span>WhatsApp</span>
+      <WhatsAppIcon className="w-8 h-8 shrink-0" />
+      <span className="hidden md:inline">WhatsApp</span>
     </a>
   );
 }

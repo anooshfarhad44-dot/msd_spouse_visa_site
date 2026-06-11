@@ -1,89 +1,56 @@
 "use client";
 
-import { useEffect } from "react";
 import { contact } from "../../data/site";
 import PageHero from "../ui/PageHero";
 import WhatsAppIcon from "../ui/WhatsAppIcon";
-
-declare global {
-  interface Window {
-    hbspt: any;
-  }
-}
+import HubspotForm from "../ui/HubSpotForm";
 
 export default function ContactPageContent() {
-  useEffect(() => {
-    const loadForm = () => {
-      if (window.hbspt) {
-        const container = document.getElementById("hubspot-form-container");
-
-        if (container) {
-          container.innerHTML = "";
-
-          window.hbspt.forms.create({
-            portalId: "8559434",
-            formId: "fbd1deba-5122-437b-a2f7-65fed9ae1b77",
-            region: "na1",
-            target: "#hubspot-form-container",
-          });
-        }
-      }
-    };
-
-    if (!document.getElementById("hubspot-script")) {
-      const script = document.createElement("script");
-      script.id = "hubspot-script";
-      script.src = "https://js.hsforms.net/forms/embed/v2.js";
-      script.async = true;
-      script.onload = loadForm;
-      document.body.appendChild(script);
-    } else {
-      loadForm();
-    }
-  }, []);
-
   return (
-    <section className="section page-section">
-      <div className="container contact-grid">
-        {/* Left Side */}
+    <section className="py-24 min-h-[60vh] bg-gradient-to-b from-white to-[#f8fbfb]">
+      <div className="w-full max-w-[1120px] mx-auto px-4 grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-14 items-start">
+        {/* Left */}
         <div>
           <PageHero
             eyebrow="Speak to an immigration solicitor"
             title="I need legal advice to apply for a UK Spouse Visa."
           >
-            Our dedicated team can help speed up your Spouse Visa application by
-            ensuring that required documents and supporting evidence are
-            correctly organised. Get in touch for a free consultation to
-            discuss your requirements.
+            Our dedicated team can help speed up your Spouse Visa application by ensuring that
+            required documents and supporting evidence are correctly organised. Get in touch for a
+            free consultation to discuss your requirements.
           </PageHero>
 
-          <div className="contact-details">
-            <p>
-              <strong>Call:</strong> {contact.phone}
+          <div className="grid gap-3 mt-6">
+            <p className="flex items-center gap-3 text-[#182d32]">
+              <strong>Call:</strong>
+              <a href={contact.phoneHref} className="text-[#0f6b72] font-bold hover:underline">
+                {contact.phone}
+              </a>
             </p>
-
-            <p>
-              <strong>Email:</strong> {contact.email}
+            <p className="flex items-center gap-3 text-[#182d32]">
+              <strong>Email:</strong>
+              <a href={contact.emailHref} className="text-[#0f6b72] font-bold hover:underline">
+                {contact.email}
+              </a>
             </p>
-
-            <p>
-              <strong>WhatsApp:</strong>{" "}
+            <p className="flex items-center gap-3 text-[#182d32]">
+              <strong>WhatsApp:</strong>
               <a
                 href={contact.whatsappHref}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="whatsapp-link whatsapp-link-contact"
+                className="inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-[#25d366] text-[#073f47] font-black text-sm hover:bg-[#1ebe5a] transition-colors"
               >
-                <WhatsAppIcon />
+                <WhatsAppIcon className="w-6 h-6 shrink-0" />
                 Message us on WhatsApp
               </a>
             </p>
           </div>
         </div>
 
-        {/* Right Side - HubSpot Form */}
-        <div className="contact-form">
-          <div id="hubspot-form-container"></div>
+        {/* Right — HubSpot form */}
+        <div className="bg-white border border-[#dbe7e9] rounded-2xl shadow-[0_18px_50px_rgba(6,47,54,0.08)] p-8">
+          <HubspotForm targetId="hubspot-form-container" />
         </div>
       </div>
     </section>

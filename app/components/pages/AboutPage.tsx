@@ -18,15 +18,14 @@ const values = [
 
 export default function AboutPageContent() {
   return (
-    <section className="section page-section">
-      <div className="container narrow">
+    <section className="py-24 min-h-[60vh] bg-gradient-to-b from-white to-[#f8fbfb]">
+      <div className="w-full max-w-[890px] mx-auto px-4">
         <PageHero
           eyebrow="About MSD Solicitors"
           title="Family and spouse visa solicitors who guide you with clarity."
         >
-          Our experienced immigration solicitors help you find out which visa you
-          need, prepare the application and move through the immigration process
-          with diligence and reassurance.
+          Our experienced immigration solicitors help you find out which visa you need, prepare the
+          application and move through the immigration process with diligence and reassurance.
         </PageHero>
         <ServiceCards items={values} />
       </div>

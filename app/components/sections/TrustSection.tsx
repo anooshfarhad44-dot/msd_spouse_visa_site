@@ -1,15 +1,19 @@
-import React from 'react';
+"use client";
+
+import React, { useState } from 'react';
 import Reveal from '../ui/Reveal';
 import Link from "next/link";
 
 const TrustSection = () => {
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+
   const features = [
-    "UK Qualified Immigration Solicitors",
-    "Fixed Fee Price Promise",
-    "Free Consultation",
-    "No Win No Fee",
-    "Fast Track Processing Package available",
-    "Competitively Priced Packages"
+    { title: "UK-Regulated Immigration Solicitors", description: "Professional, qualified legal representation you can trust" },
+    { title: "Guaranteed Fixed-Fee Services", description: "Transparent pricing with no hidden charges or surprises" },
+    { title: "Free Initial Case Assessment", description: "Get expert advice on your eligibility before committing" },
+    { title: "No Win, No Fee Representation", description: "Risk-free service with payment only on success" },
+    { title: "Expedited Processing Options Available", description: "Fast-track your application when time is critical" },
+    { title: "Cost-Effective Immigration Solutions", description: "Premium legal services at competitive, accessible rates" }
   ];
 
   const logos = [
@@ -46,11 +50,30 @@ const TrustSection = () => {
 
             <ul className="trust-features">
               {features.map((feature, index) => (
-                <li key={index}>
-                  <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="check-icon">
-                    <polyline points="20 6 9 17 4 12"></polyline>
-                  </svg>
-                  {feature}
+                <li 
+                  key={index} 
+                  className={`trust-feature-item ${openIndex === index ? 'open' : ''}`}
+                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                  style={{ cursor: 'pointer' }}
+                >
+                  <div className="feature-icon-wrapper">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" className="check-icon">
+                      <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                  </div>
+                  <div className="feature-content">
+                    <div className="feature-title-row">
+                      <strong className="feature-title">{feature.title}</strong>
+                      <span className={`expand-icon ${openIndex === index ? 'rotated' : ''}`}>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="6 9 12 15 18 9"></polyline>
+                        </svg>
+                      </span>
+                    </div>
+                    {openIndex === index && (
+                      <span className="feature-description">{feature.description}</span>
+                    )}
+                  </div>
                 </li>
               ))}
             </ul>

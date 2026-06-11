@@ -14,6 +14,7 @@ export const parentSite = {
 };
 
 export const navItems = [
+  { href: "/", label: "Home" },
   { href: "/eligibility", label: "Eligibility" },
   { href: "/process", label: "Process" },
   { href: "/documents", label: "Documents" },

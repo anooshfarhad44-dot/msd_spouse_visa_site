@@ -71,7 +71,7 @@ export default function Footer() {
       <div className="w-full max-w-[1120px] mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
         {/* Brand */}
         <div>
-          <div className="text-white font-[var(--font-montserrat)] text-2xl font-extrabold">
+          <div className="text-white text-2xl font-extrabold">
             Spouse Visa
           </div>
           <p className="mt-3 text-white/75 leading-relaxed text-sm">

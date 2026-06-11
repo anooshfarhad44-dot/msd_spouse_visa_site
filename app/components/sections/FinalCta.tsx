@@ -12,7 +12,7 @@ export default function FinalCta() {
       }}
     >
       <div className="w-full max-w-[680px] mx-auto px-4 text-center">
-        <h2 className="text-3xl md:text-4xl font-extrabold text-white leading-snug font-[var(--font-montserrat)] m-0">
+        <h2 className="text-3xl md:text-4xl font-bold text-white leading-snug m-0">
           Speak to an immigration solicitor about your spouse visa.
         </h2>
         <p className="mt-4 mb-7 text-white leading-relaxed text-lg">

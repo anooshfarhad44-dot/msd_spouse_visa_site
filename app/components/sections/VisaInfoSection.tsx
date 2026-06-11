@@ -14,7 +14,7 @@ export default function VisaInfoSection() {
               <p className="mb-3 text-[#0f6b72] font-extrabold text-sm tracking-widest uppercase">
                 Detailed Guidance
               </p>
-              <h2 className="text-4xl md:text-5xl font-extrabold text-[#062f36] leading-tight font-[var(--font-montserrat)] m-0">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#062f36] leading-tight m-0">
                 Spouse Family Visa
               </h2>
               <p className="text-[#62777d] text-lg mt-1 mb-6">(also known as Spouse Entry Clearance)</p>
@@ -55,7 +55,7 @@ export default function VisaInfoSection() {
 
             {/* Right sticky card */}
             <aside className="lg:sticky lg:top-[140px] p-8 bg-white border-[1.5px] border-[#dbe7e9]/80 rounded-3xl shadow-[0_20px_50px_rgba(6,47,54,0.08)]">
-              <h3 className="text-2xl font-extrabold text-[#062f36] font-[var(--font-montserrat)] m-0">Quick Summary</h3>
+              <h3 className="text-2xl font-bold text-[#062f36] m-0">Quick Summary</h3>
               <div className="w-10 h-0.5 bg-gradient-to-r from-[#0f6b72] to-[#f4c400] rounded-full my-3" />
               <p className="text-[#556b6e] text-sm leading-relaxed">
                 Typical processing times vary by location. We focus on preparing complete, "decision-ready" applications to minimize delays.

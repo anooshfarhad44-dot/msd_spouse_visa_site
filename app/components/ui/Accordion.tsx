@@ -51,7 +51,7 @@ export default function Accordion({ items, singleOpen = false }: Props) {
                 <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </span>
-            <span className="text-base font-bold text-[#062f36] font-[var(--font-montserrat)] text-left">
+            <span className="text-base font-bold text-[#062f36] text-left">
               {it.title}
             </span>
           </button>

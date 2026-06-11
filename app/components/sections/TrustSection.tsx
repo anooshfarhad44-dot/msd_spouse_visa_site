@@ -32,9 +32,9 @@ export default function TrustSection() {
         {/* Left content */}
         <div className="flex-1 max-w-[600px]">
           <Reveal>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-[#062f36] font-[var(--font-montserrat)] m-0 mb-2">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#062f36] m-0 mb-2">
               Apply For A UK Spouse Visa with{" "}
-              <Link href="https://www.msdsolicitors.co.uk/" target="_blank" className="text-[#f4c400] underline underline-offset-4 font-extrabold hover:opacity-80 transition-opacity">
+              <Link href="https://www.msdsolicitors.co.uk/" target="_blank" className="text-[#f4c400] underline underline-offset-4 font-bold hover:opacity-80 transition-opacity">
                 MSD Solicitors
               </Link>
             </h2>
@@ -43,7 +43,7 @@ export default function TrustSection() {
             </h3>
 
             <div className="flex items-center gap-4 mb-8">
-              <span className="text-7xl font-extrabold text-[#062f36] leading-none font-[var(--font-montserrat)]">99%</span>
+              <span className="text-7xl font-extrabold text-[#062f36] leading-none">99%</span>
               <div className="flex flex-col text-lg text-[#062f36]">
                 <strong className="text-xl">Success Rate For</strong>
                 <span>Spouse Visa Applications</span>

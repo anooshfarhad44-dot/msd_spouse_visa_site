@@ -9,7 +9,7 @@ export default function ProcessOverview() {
           <p className="mb-3 text-[#0f6b72] font-extrabold text-sm tracking-widest uppercase">
             Simple Process
           </p>
-          <h2 className="text-3xl md:text-4xl font-extrabold text-[#182d32] leading-snug font-[var(--font-montserrat)] m-0">
+          <h2 className="text-3xl md:text-4xl font-bold text-[#182d32] leading-snug m-0">
             A calm route from first call to submission.
           </h2>
           <p className="mt-4 text-[#62777d] text-lg leading-relaxed">
@@ -26,7 +26,7 @@ export default function ProcessOverview() {
               key={step}
               className="flex items-center gap-5 min-h-[70px] px-5 py-4 bg-white border-l-[5px] border-[#f4c400] rounded-2xl font-extrabold text-[#182d32] shadow-[0_18px_50px_rgba(6,47,54,0.08)]"
             >
-              <span className="text-[#0f6b72] font-extrabold font-[var(--font-montserrat)]">
+              <span className="text-[#0f6b72] font-extrabold">
                 {String(index + 1).padStart(2, "0")}
               </span>
               {step}

@@ -1,20 +1,16 @@
 import type { Metadata } from "next";
-import { Inter, Montserrat } from "next/font/google";
+import { Playfair_Display } from "next/font/google";
 import "./globals.css";
 import Header from "./components/layout/Header";
 import Footer from "./components/layout/Footer";
 import FloatingWhatsApp from "./components/layout/FloatingWhatsApp";
 
-const inter = Inter({
-  variable: "--font-inter",
+const playfair = Playfair_Display({
+  variable: "--font-primary",
   subsets: ["latin"],
-  weight: ["300", "400", "600"],
-});
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-  weight: ["600", "700", "800"],
+  weight: ["400", "500", "600", "700", "800", "900"],
+  style: ["normal", "italic"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -25,8 +21,11 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${inter.variable} ${montserrat.variable} h-full antialiased`}>
-      <body suppressHydrationWarning className="min-h-full flex flex-col font-[var(--font-inter)] bg-white text-[#182d32] overflow-x-hidden">
+    <html lang="en" className={`${playfair.variable} h-full`}>
+      <body
+        suppressHydrationWarning
+        className="min-h-full flex flex-col bg-white text-[#182d32] overflow-x-hidden"
+      >
         <Header />
         <main className="flex-1">{children}</main>
         <FloatingWhatsApp />

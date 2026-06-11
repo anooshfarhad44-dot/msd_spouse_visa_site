@@ -44,7 +44,7 @@ export default function AboutSection() {
               <p className="mb-3 text-[#0f6b72] font-extrabold text-sm tracking-widest uppercase">
                 Professional Expertise
               </p>
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#062f36] leading-tight font-[var(--font-montserrat)] m-0 mb-5">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-[#062f36] leading-tight m-0 mb-5">
                 About Our Specialized Services
               </h2>
               <p className="text-[#0f6b72] text-xl leading-relaxed mb-10">
@@ -60,7 +60,7 @@ export default function AboutSection() {
                       {f.icon}
                     </div>
                     <div>
-                      <strong className="block text-lg font-extrabold text-[#062f36] mb-1.5 font-[var(--font-montserrat)]">
+                      <strong className="block text-lg font-extrabold text-[#062f36] mb-1.5">
                         {f.title}
                       </strong>
                       <span className="text-[#62777d] text-base leading-relaxed">{f.text}</span>

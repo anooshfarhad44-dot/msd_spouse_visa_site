@@ -22,7 +22,7 @@ export default function EligibilityPageContent() {
             <div className="inline-flex items-center gap-2 px-3.5 py-2 border border-[#073f47]/12 bg-white/58 rounded-full font-bold text-sm text-[#062f36] shadow-[0_8px_20px_rgba(6,47,54,0.08)] mb-4">
               ✓ Free Eligibility Assessment
             </div>
-            <h3 className="text-2xl md:text-3xl font-extrabold text-[#073f47] font-[var(--font-montserrat)] m-0 mb-3">
+            <h3 className="text-2xl md:text-3xl font-bold text-[#073f47] m-0 mb-3">
               Ready to Find Out If You Qualify?
             </h3>
             <p className="text-[#073f47]/88 leading-relaxed mb-4">
@@ -56,7 +56,7 @@ export default function EligibilityPageContent() {
         </Reveal>
 
         <Reveal delay={80}>
-          <h2 className="text-2xl font-extrabold text-[#182d32] font-[var(--font-montserrat)] mt-10 mb-2">
+          <h2 className="text-2xl font-bold text-[#182d32] mt-10 mb-2">
             Quick eligibility checklist
           </h2>
           <p className="text-[#62777d] text-lg leading-relaxed">These are common requirements we check when assessing eligibility.</p>
@@ -109,7 +109,7 @@ export default function EligibilityPageContent() {
         {/* FAQ */}
         <Reveal delay={200}>
           <div className="mt-8">
-            <h3 className="text-xl font-extrabold text-[#182d32] font-[var(--font-montserrat)] mb-4">Frequently asked questions</h3>
+            <h3 className="text-xl font-bold text-[#182d32] mb-4">Frequently asked questions</h3>
             <div className="grid gap-3">
               {[
                 {

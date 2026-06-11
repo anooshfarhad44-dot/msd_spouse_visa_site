@@ -19,7 +19,7 @@ export default function EligibilityOverview() {
       <div className="w-full max-w-[1120px] mx-auto px-4">
         {/* Header */}
         <div className="text-center mb-10">
-          <h2 className="text-4xl md:text-5xl font-extrabold text-[#062f36] font-[var(--font-montserrat)] m-0">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#062f36] m-0">
             UK <span className="text-[#f4c400]">Spouse</span> Visa Eligibility
           </h2>
           <div className="w-14 h-0.5 bg-gradient-to-r from-[#0f6b72] to-[#f4c400] rounded-full mx-auto mt-4" />
@@ -59,7 +59,7 @@ export default function EligibilityOverview() {
           </div>
           <Link
             href="/eligibility/check"
-            className="inline-flex items-center justify-center px-12 py-4 bg-gradient-to-br from-[#f4c400] to-[#f6a700] text-[#062f36] text-xl font-extrabold font-[var(--font-montserrat)] rounded-full shadow-[0_12px_36px_rgba(244,196,0,0.3)] hover:-translate-y-1 hover:shadow-[0_18px_48px_rgba(244,196,0,0.4)] transition-all duration-300"
+            className="inline-flex items-center justify-center px-12 py-4 bg-gradient-to-br from-[#f4c400] to-[#f6a700] text-[#062f36] text-xl font-extrabold rounded-full shadow-[0_12px_36px_rgba(244,196,0,0.3)] hover:-translate-y-1 hover:shadow-[0_18px_48px_rgba(244,196,0,0.4)] transition-all duration-300"
           >
             Check Your Eligibility Now
           </Link>

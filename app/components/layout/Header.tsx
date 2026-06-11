@@ -121,11 +121,11 @@ export default function Header() {
       {/* ── Brand row ── */}
       <div className="w-full max-w-[1120px] mx-auto px-4 flex items-center justify-between gap-6 py-3 border-b border-[#dbe7e9]/60">
         <Link href="/" className="inline-flex items-center gap-3.5" aria-label="Spouse Visa home">
-          <span className="w-14 h-14 grid place-items-center text-white bg-gradient-to-br from-[#0f6b72] to-[#062f36] rounded-xl font-[var(--font-montserrat)] text-xl font-extrabold shadow-[inset_0_-8px_18px_rgba(0,0,0,0.18),0_14px_28px_rgba(15,107,114,0.22)]">
+          <span className="w-14 h-14 grid place-items-center text-white bg-gradient-to-br from-[#0f6b72] to-[#062f36] rounded-xl text-xl font-extrabold shadow-[inset_0_-8px_18px_rgba(0,0,0,0.18),0_14px_28px_rgba(15,107,114,0.22)]">
             SV
           </span>
           <span>
-            <strong className="block font-[var(--font-montserrat)] text-xl text-[#073f47]">Spouse Visa</strong>
+            <strong className="block text-xl text-[#073f47]">Spouse Visa</strong>
             <small className="block text-[#62777d] mt-0.5 text-sm">UK partner immigration support</small>
           </span>
         </Link>

@@ -10,7 +10,7 @@ export default function ServicesOverview() {
             <p className="mb-3 text-[#0f6b72] font-extrabold text-sm tracking-widest uppercase">
               What We Handle
             </p>
-            <h2 className="text-3xl md:text-4xl font-extrabold text-[#182d32] leading-snug font-[var(--font-montserrat)] m-0">
+            <h2 className="text-3xl md:text-4xl font-bold text-[#182d32] leading-snug m-0">
               Spouse Family Visa advice from experienced immigration solicitors.
             </h2>
           </div>

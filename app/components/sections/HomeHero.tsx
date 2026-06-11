@@ -23,7 +23,7 @@ export default function HomeHero() {
               <div className="inline-flex items-center px-3 py-2 border border-[#f4c400]/40 rounded-full bg-white/10 text-[#f4c400] font-extrabold text-xs tracking-widest uppercase backdrop-blur-sm mb-4">
                 Spouse &amp; Family Visa Solicitors
               </div>
-              <h1 className="text-4xl md:text-5xl lg:text-[clamp(2.35rem,6vw,4.35rem)] font-extrabold text-white leading-tight font-[var(--font-montserrat)]">
+              <h1 className="text-4xl md:text-5xl lg:text-[clamp(2.35rem,6vw,4.35rem)] font-bold text-white leading-tight">
                 Family and Spouse Visa Solicitors in Manchester
               </h1>
               <p className="mt-5 text-white/84 text-lg leading-relaxed max-w-[560px]">

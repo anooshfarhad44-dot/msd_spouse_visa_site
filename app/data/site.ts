@@ -279,6 +279,81 @@ export const processSteps = [
   },
 ];
 
+
+
+const reviewsData = [
+  {
+    name: "Osama Shinwari",
+    date: "Nov 3, 2025",
+    reviewTitle: "I had my asylum case refused at first...",
+    reviewBody: "I had my asylum case refused at first and was very stressed, but Mr Hamza Khan handled my appeal with great care and attention. He carefully addressed every issue raised by the Home Office and kept me updated throughout the process. Thanks to his hard work and detailed submissions, the Home Office granted my asylum without even needing a hearing. I'm truly grateful for his dedication, knowledge, and support. I highly recommend him to anyone needing help with immigration or asylum matters.",
+    stars: 5
+  },
+  {
+    name: "Elizabeth Sidley",
+    date: "May 19, 2026",
+    reviewTitle: "Excellent service",
+    reviewBody: "Excellent service, very professional. We acquired a Visa very promptly. It was all handled for us, delays on our part were dealt with at no extra charge, Hasan was available to answer any questions or problems that arose.",
+    stars: 5
+  },
+  {
+    name: "Charlyn B",
+    date: "Mar 3, 2026",
+    reviewTitle: "Medexpress is better and fast",
+    reviewBody: "Medexpress is better and fast, but sometimes the clinical review they ened to check order history at times to see about the gap thing, they have access of my account and all, Im sure they can see the gap etc, but I like the website its cheaper compared to others.",
+    stars: 5
+  },
+  {
+    name: "Hadi",
+    date: "Apr 20, 2026",
+    reviewTitle: "Excellent services",
+    reviewBody: "Excellent services",
+    stars: 5
+  },
+  {
+    name: "MR MANIDEEP DAMERA",
+    date: "Aug 7, 2025",
+    reviewTitle: "I want to express my heartfelt thanks...",
+    reviewBody: "I want to express my heartfelt thanks to my lawyer, Javed, for successfully helping me secure my Skilled Worker Visa. From the very beginning, Javed guided me through every step of the process with great care and professionalism. He didn’t just handle my case—he truly understood it. He double-checked every detail, took multiple references, and made well-researched decisions that showed his intelligence and dedication. What stood out most was how available and supportive he was throughout the journey. He took on the stress that I was carrying and made the entire process smooth and manageable for me. His commitment and expertise were key in getting me across the finish line. Thank you very much, Javed, and I wish you all the best in your future cases. You're an exceptional lawyer and I’m grateful for everything you’ve done!",
+    stars: 5
+  },
+  {
+    name: "Gabriel Tebogo Mooke",
+    date: "4 months ago",
+    reviewTitle: "I would like to thank Hamza Khan...",
+    reviewBody: "I would like to thank Hamza Khan for full support, patience and professionalism throughout my wife’s dependent visa application. He took me through the whole process smoothly and the results had positively paid off. We are grateful for your service. Keep up the excellent work Mr Hamza.",
+    stars: 5
+  },
+  {
+    name: "G Boss",
+    date: "5 months ago",
+    reviewTitle: "Highly recommend MSD Solicitors...",
+    reviewBody: "Highly recommend MSD Solicitors, I was worried when I first met with Zain, his advise, his knowledge, his confidence was amazing. Zain made every effort to address all questions I had. He was available all the time, because of my worries whatever questions I had he always listen and answer. Beyond anything his knowledge on immigration laws and confidence was excellent. First day he said he will get visa sorted and accordingly without any problems he have sorted the visa. It was smooth process. Highly recommend Zain and his team.",
+    stars: 5
+  },
+  {
+    name: "Poppy",
+    date: "5 months ago",
+    reviewTitle: "Highly recommend MSD SOLICITORS...",
+    reviewBody: "Highly recommend MSD SOLICITORS. I'm glad I found this firm. Mr.Hamza Khan helped us from deportation flight. I was and am still very anxious about our case. It is still ongoing but I have full trust in Mr Hamza Khan and MSD Solicitors. I believe they will be with us throughout our journey. I'm feeling grateful. Mr.Hamza Khan is truly a professional. He is always available when we need him. I'll be forever grateful.",
+    stars: 5
+  },
+  {
+    name: "Pradnya Gage",
+    date: "6 months ago",
+    reviewTitle: "Huge thanks to Mr. Hamza Khan...",
+    reviewBody: "Huge thanks to Mr. Hamza Khan from MSD Solicitors. He was so calm, helpful and genuinely professional throughout the whole process. I was really stressed, but he kept reassuring me and handled everything so smoothly. He even helped me after his working hours just to make sure my application was sorted on time. Really grateful for his support — couldn’t recommend him enough.",
+    stars: 5
+  },
+  {
+    name: "Jominder Duggal",
+    date: "6 months ago",
+    reviewTitle: "Thank you so much to Mr Hamza...",
+    reviewBody: "Thank you so much to Mr Hamza, he was very helpful throughout my applications process and successful results at the end. I also want to say thank you to Tasnim whenever I couldn't reach to Hamza she passed my messages to him and i always have response back from Hamza. I definitely recommend MSD Solicitors whoever looking for help with immigration matters.",
+    stars: 5
+  }
+];
+
 export const documentGroups = [
   "Passports and identity documents",
   "Marriage or civil partnership certificate",

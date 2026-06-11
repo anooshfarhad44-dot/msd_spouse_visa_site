@@ -27,6 +27,8 @@ const TrustSection = () => {
     { src: "/images/socities_logos/c2.png", alt: "Logo 2" },
     { src: "/images/socities_logos/c3.png", alt: "Logo 3" },
     { src: "/images/socities_logos/c4.png", alt: "Logo 4" },
+    { src: "/images/socities_logos/c5.png", alt: "Logo 5" },
+    { src: "/images/socities_logos/c6.png", alt: "Logo 6" },
   ];
 
   return (

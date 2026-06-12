@@ -6,7 +6,7 @@ import Link from "next/link";
 
 export default function EligibilityPageContent() {
   return (
-    <section className="py-24 min-h-[60vh] bg-gradient-to-b from-white to-[#f8fbfb] overflow-x-hidden">
+    <section className="py-5 min-h-[60vh] bg-gradient-to-b from-white to-[#f8fbfb] overflow-x-hidden">
       <div className="w-full max-w-[890px] mx-auto px-4">
         <Reveal>
           <PageHero eyebrow="Spouse Family Visa" title="Who is eligible for a Spouse Family Visa?">

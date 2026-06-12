@@ -3,11 +3,11 @@ import PageHero from "../ui/PageHero";
 
 export default function DocumentsPageContent() {
   return (
-    <section className="py-24 min-h-[60vh] bg-gradient-to-b from-white to-[#f8fbfb]">
+    <section className="py-4 min-h-[60vh] bg-gradient-to-b from-white to-[#f8fbfb]">
       <div className="w-full max-w-[890px] mx-auto px-4">
         <PageHero
           eyebrow="Documents"
-          title="Build a spouse visa evidence pack that is easy to assess."
+          title="A spouse visa evidence pack that is easy to assess."
         >
           We help organise documents so the application tells a consistent story and directly answers
           the spouse visa requirements.

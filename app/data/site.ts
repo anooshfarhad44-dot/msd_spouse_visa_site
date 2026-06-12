@@ -221,6 +221,77 @@ export const countries = [
   "Zimbabwe",
 ];
 
+
+export const visaServices = [
+  "Spouse Visa",
+  "Spouse Visa Extension",
+  "Fiancé / Fiancée Visa",
+  "Marriage Visitor Visa",
+  "Civil Partner Visa",
+  "Unmarried Partner Visa",
+  "Partner Visa",
+  "Partner Visa Extension (FLR(M))",
+  "Further Leave to Remain (FLR)",
+  "Indefinite Leave to Remain (ILR)",
+  "British Citizenship",
+  "Dependent Child Visa",
+  "Adult Dependent Relative Visa",
+  "Switch to Spouse Visa",
+  "Spouse Visa Refusal Appeal",
+  "Spouse Visa Administrative Review",
+  "Spouse Visa Reapplication",
+  "Human Rights / Exceptional Circumstances Application",
+  "Document Checking Service",
+  "Priority / Super Priority Service",
+  "Other",
+];
+
+export const personalFees = [
+    { label: "Entry Clearance/Spouse Visa", price: "£800 - £1,500", isMain: true }, // Main highlighted visa category
+    { label: "Visiting family in the UK", price: "£700 - £1,200", isMain: false },
+    { label: "Student visitor", price: "£700 - £1,200", isMain: false },
+    { label: "Further Leave to Remain", price: "£1,000 - £1,500", isMain: false },
+    { label: "Indefinite Leave to Remain", price: "£1,000 - £1,500", isMain: false },
+    { label: "Adult Dependent Relative", price: "£1,800 - £2,200", isMain: false },
+    { label: "British Citizenship/Settlement", price: "£600 - £1,000", isMain: false },
+  ];
+
+  export const businessFees = [
+  { label: "Skilled Worker Visa", price: "£850 - £1,500" },
+  { label: "Intra Company Transfer", price: "£1,500 - £3,000" },
+  { label: "Student Visas", price: "£850 - £2,500" },
+  { label: "Global Talent Visa", price: "£2,000 - £3,000" },
+  { label: "Innovator Visa", price: "£2,500 - £5,000" },
+  { label: "Sponsorship Licence", price: "Contact us for a quote" }
+];
+
+export const appealsFees = [
+  { label: "Detained / Bail Applications", price: "£1,500 - £3,000" },
+  { label: "Visa appeals (except asylum, overstayer, deportation or revocation of citizenship)", price: "£1,500 - £3,000" }
+];
+
+
+
+export const features = [
+  { title: "UK-Regulated Immigration Solicitors", description: "Professional, qualified legal representation you can trust" },
+  { title: "Guaranteed Fixed-Fee Services", description: "Transparent pricing with no hidden charges or surprises" },
+  { title: "Free Initial Case Assessment", description: "Get expert advice on your eligibility before committing" },
+  { title: "No Win, No Fee Representation", description: "Risk-free service with payment only on success" },
+  { title: "Expedited Processing Options Available", description: "Fast-track your application when time is critical" },
+  { title: "Cost-Effective Immigration Solutions", description: "Premium legal services at competitive, accessible rates" },
+];
+
+export const logos = [
+  { src: "/images/socities_logos/c1.png", alt: "Society 1" },
+  { src: "/images/socities_logos/c2.png", alt: "Society 2" },
+  { src: "/images/socities_logos/c3.png", alt: "Society 3" },
+  { src: "/images/socities_logos/c4.png", alt: "Society 4" },
+  { src: "/images/socities_logos/c5.png", alt: "Society 5" },
+  { src: "/images/socities_logos/c6.png", alt: "Society 6" },
+];
+
+
+
 export const homeHighlights = [
   "Manchester-based immigration solicitors",
   "Spouse Family Visa and Entry Clearance support",

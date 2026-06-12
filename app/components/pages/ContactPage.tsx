@@ -1,15 +1,46 @@
 "use client";
 
+import { useState } from "react";
 import { contact } from "../../data/site";
 import PageHero from "../ui/PageHero";
 import WhatsAppIcon from "../ui/WhatsAppIcon";
-import HubspotForm from "../ui/HubSpotForm";
+import CaseReviewForm from "../ui/CaseReviewForm";
 
 export default function ContactPageContent() {
+  // Form Local State Integration
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    countryResidence: "",
+    nationality: "",
+    visaService: "",
+    concerns: [] as string[],
+    tailoredAdvice: "",
+    consent: false,
+  });
+
+  const handleCheckboxChange = (concern: string) => {
+    setFormData((prev) => ({
+      ...prev,
+      concerns: prev.concerns.includes(concern)
+        ? prev.concerns.filter((c) => c !== concern)
+        : [...prev.concerns, concern],
+    }));
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Submitted Legal Intake Data:", formData);
+    // Yahan aap apni custom api integration handle kar sakte hain
+  };
+
   return (
     <section className="py-24 min-h-[60vh] bg-gradient-to-b from-white to-[#f8fbfb]">
-      <div className="w-full max-w-[1120px] mx-auto px-4 grid grid-cols-1 md:grid-cols-[0.85fr_1.15fr] gap-14 items-start">
-        {/* Left */}
+      <div className="w-full max-w-[1120px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-[0.8fr_1.2fr] gap-12 items-start">
+        
+        {/* Left Section */}
         <div>
           <PageHero
             eyebrow="Speak to an immigration solicitor"
@@ -48,10 +79,7 @@ export default function ContactPageContent() {
           </div>
         </div>
 
-        {/* Right — HubSpot form */}
-        <div className="bg-white border border-[#dbe7e9] rounded-2xl shadow-[0_18px_50px_rgba(6,47,54,0.08)] p-8">
-          <HubspotForm targetId="hubspot-form-container" />
-        </div>
+       <CaseReviewForm/>
       </div>
     </section>
   );

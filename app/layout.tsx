@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display } from "next/font/google";
 import "./globals.css";
-import Header from "./components/layout/Header";
+import Header from "./components/layout/Header/Header";
 import Footer from "./components/layout/Footer";
 import FloatingWhatsApp from "./components/layout/FloatingWhatsApp";
 

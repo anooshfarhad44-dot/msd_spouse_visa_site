@@ -110,14 +110,13 @@
 //   );
 // }
 
-
 import Link from "next/link";
 import Reveal from "../ui/Reveal";
 
 export default function HomeHero() {
   return (
     <section
-      className="min-h-[600px] relative overflow-hidden"
+      className="relative overflow-hidden"
       style={{
         backgroundImage:
           "radial-gradient(circle at 70% 20%, rgba(244,196,0,0.2), transparent 20rem), linear-gradient(90deg, rgba(6,47,54,0.94), rgba(6,47,54,0.56)), url('/images/heroImg.png')",
@@ -125,37 +124,66 @@ export default function HomeHero() {
         backgroundPosition: "center",
       }}
     >
-      {/* fade bottom */}
-      <div className="absolute left-0 right-0 bottom-0 h-24 bg-gradient-to-b from-transparent to-white/96 pointer-events-none" />
+      {/* Global Style Injector for Custom Animations */}
+      <style>{`
+        @keyframes float {
+          0%, 100% { transform: translateY(0px); }
+          50% { transform: translateY(-6px); }
+        }
+        @keyframes subtle-pulse {
+          0%, 100% { transform: scale(1); box-shadow: 0 14px 30px rgba(244,196,0,0.25); }
+          50% { transform: scale(1.02); box-shadow: 0 20px 40px rgba(244,196,0,0.45); }
+        }
+        @keyframes shimmer-sweep {
+          0% { left: -100%; }
+          100% { left: 200%; }
+        }
+      `}</style>
 
-      <div className="relative z-10 min-h-[600px] flex items-center py-16">
-        <div className="w-full max-w-[1120px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-[minmax(0,680px)_minmax(300px,1fr)] gap-10">
+      {/* fade bottom */}
+      <div className="absolute left-0 right-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white/96 pointer-events-none" />
+
+      <div className="relative z-10 flex items-center py-10 lg:py-12">
+        <div className="w-full max-w-[1120px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-[minmax(0,660px)_minmax(300px,1fr)] gap-8 items-center">
           
           {/* Left panel */}
           <div>
             <Reveal>
-              <div className="inline-flex items-center px-3 py-2 border border-[#f4c400]/40 rounded-full bg-white/10 text-[#f4c400] font-extrabold text-xs tracking-widest uppercase backdrop-blur-sm mb-4">
+              <div className="inline-flex items-center px-3 py-1.5 border border-[#f4c400]/40 rounded-full bg-white/10 text-[#f4c400] font-extrabold text-xs tracking-widest uppercase backdrop-blur-sm mb-3">
                 Spouse &amp; Family Visa Solicitors
               </div>
               
-              <h1 className="text-4xl md:text-5xl lg:text-[clamp(2.35rem,6vw,4.35rem)] font-bold text-white leading-tight">
+              <h2 className="text-3xl md:text-4xl lg:text-[clamp(2.2rem,5vw,3.8rem)] font-bold text-white leading-tight">
                 Family and Spouse Visa Solicitors in Manchester
-              </h1>
+              </h2>
               
-              <p className="mt-5 text-white/90 text-lg leading-relaxed max-w-[560px] font-medium">
+              <p className="mt-4 text-white/90 text-base md:text-lg leading-relaxed max-w-[560px] font-medium">
                 Bringing families together is our core mission. MSD Solicitors specialize in navigating complex UK Spouse Visa applications, transforming stressful legal requirements into seamless, successful journeys.
               </p>
               
-              <p className="mt-4 text-[#f4c400] text-xl font-black leading-relaxed max-w-[560px] flex items-center gap-2">
+              <p className="mt-3 text-[#f4c400] text-lg font-black leading-relaxed max-w-[560px] flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-[#f4c400] animate-ping" />
                 Proudly Maintaining a 99% Success Ratio
               </p>
 
-              <div className="flex flex-wrap gap-3 mt-7">
-                <Link href="/contact" className="inline-flex items-center justify-center min-h-[52px] px-6 py-3 rounded-full font-extrabold bg-[#f4c400] text-[#062f36] shadow-[0_14px_30px_rgba(244,196,0,0.25)] hover:-translate-y-0.5 hover:shadow-[0_18px_40px_rgba(244,196,0,0.35)] transition-all duration-200">
-                  Speak to an immigration solicitor
+              <div className="flex flex-wrap items-center gap-4 mt-6">
+                {/* 
+                  Attraction Button (image_92f401.png): 
+                  Added subtle pulse scaling & looping white reflection glow sweep
+                */}
+                <Link 
+                  href="/contact" 
+                  className="relative overflow-hidden inline-flex items-center justify-center min-h-[52px] px-7 py-3 rounded-full font-black bg-[#f4c400] text-[#062f36] transition-all duration-300 text-sm animate-[subtle-pulse_3s_ease-in-out_infinite] hover:bg-[#ebd04b]"
+                >
+                  {/* Internal Shimmer Layer */}
+                  <span 
+                    className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] pointer-events-none animate-[shimmer-sweep_2.5s_infinite]"
+                    style={{ animationTimingFunction: 'linear' }}
+                  />
+                  <span className="relative z-10">Speak to an immigration solicitor</span>
                 </Link>
-                <Link href="/services" className="inline-flex items-center justify-center min-h-[52px] px-6 py-3 rounded-full font-extrabold text-white border border-white/50 bg-white/12 backdrop-blur-sm hover:-translate-y-0.5 transition-all duration-200">
+
+                <Link href="/services" className="inline-flex items-center justify-center min-h-[52px] px-6 py-3 rounded-full font-extrabold text-white border border-white/50 bg-white/12 backdrop-blur-sm hover:-translate-y-0.5 transition-all duration-200 text-sm">
                   Our Services
                 </Link>
               </div>
@@ -165,65 +193,60 @@ export default function HomeHero() {
           {/* Right panel */}
           <div>
             <Reveal delay={120}>
-              <img
-                src="/images/heroImg.png"
-                alt="Family illustration"
-                className="w-full rounded-2xl shadow-[0_18px_50px_rgba(6,47,54,0.12)]"
-              />
-              
-              <div className="mt-6 flex flex-col items-center">
+              <div className="max-w-[420px] mx-auto lg:max-w-none">
+                <img
+                  src="/images/heroImg.png"
+                  alt="Family illustration"
+                  className="w-full rounded-2xl shadow-[0_12px_40px_rgba(6,47,54,0.15)] max-h-[260px] lg:max-h-none object-cover"
+                />
                 
-                {/* Eligibility CTA button with smooth Floating Keyframe Animation */}
-                <div className="relative w-full mt-2 group animate-[float_4s_ease-in-out_infinite]">
-                  <style>{`
-                    @keyframes float {
-                      0%, 100% { transform: translateY(0px); }
-                      50% { transform: translateY(-8px); }
-                    }
-                  `}</style>
+                <div className="mt-4 flex flex-col items-center">
+                  
+                  {/* Eligibility CTA button with smooth Floating Keyframe Animation */}
+                  <div className="relative w-full group animate-[float_4s_ease-in-out_infinite]">
+                    {/* Ripple rings — behind the button */}
+                    <span aria-hidden="true" className="btn-ripple" />
+                    <span aria-hidden="true" className="btn-ripple-2" />
 
-                  {/* Ripple rings — behind the button */}
-                  <span aria-hidden="true" className="btn-ripple" />
-                  <span aria-hidden="true" className="btn-ripple-2" />
-
-                  <Link
-                    href="/eligibility/check"
-                    className="btn-eligibility relative z-10 flex items-center justify-center w-full min-h-[64px] px-8 text-xl font-black rounded-full overflow-hidden bg-[#f4c400] text-[#062f36] shadow-[0_12px_24px_rgba(244,196,0,0.3)] hover:scale-[1.03] transition-all duration-300"
-                  >
-                    {/* shimmer sweep */}
-                    <span aria-hidden="true" className="btn-shimmer" />
-                    {/* content */}
-                    <span className="relative z-10 flex items-center gap-2.5">
-                      <span className="arrow-nudge">
-                        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                          <path d="M5 12h14M12 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                      Check Your Eligibility Now
-                    </span>
-                  </Link>
-                </div>
-
-                {/* Badges Shifted beautifully below the main action button */}
-                <div className="flex gap-2.5 justify-center mt-6 flex-wrap w-full max-w-md">
-                  {[
-                    { icon: "⚡", label: "Takes 2 Minutes" },
-                    { icon: "⭐", label: "100% Free" },
-                    { icon: "🛡️", label: "No Obligation" },
-                  ].map((b) => (
-                    <div
-                      key={b.label}
-                      className="flex items-center gap-2 px-3.5 py-2 bg-white rounded-full text-[#062f36] font-black text-xs border-2 border-[#0f6b72] shadow-[0_4px_12px_rgba(6,47,54,0.12)] shrink-0"
+                    <Link
+                      href="/eligibility/check"
+                      className="btn-eligibility relative z-10 flex items-center justify-center w-full min-h-[58px] px-6 text-lg font-black rounded-full overflow-hidden bg-[#f4c400] text-[#062f36] shadow-[0_10px_20px_rgba(244,196,0,0.25)] hover:scale-[1.02] transition-all duration-300"
                     >
-                      <span>{b.icon}</span>
-                      {b.label}
-                    </div>
-                  ))}
-                </div>
+                      {/* shimmer sweep */}
+                      <span aria-hidden="true" className="btn-shimmer" />
+                      {/* content */}
+                      <span className="relative z-10 flex items-center gap-2">
+                        <span className="arrow-nudge">
+                          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="M5 12h14M12 5l7 7-7 7" />
+                          </svg>
+                        </span>
+                        Check Your Eligibility Now
+                      </span>
+                    </Link>
+                  </div>
 
-                <p className="mt-5 text-center text-white/90 font-bold text-sm tracking-wide max-w-xs">
-                  Find out instantly if you meet the core requirements for a UK Spouse Visa.
-                </p>
+                  {/* Badges shifted layout beneath the main button */}
+                  <div className="flex gap-2 justify-center mt-4 flex-wrap w-full">
+                    {[
+                      { icon: "⚡", label: "Takes 2 Minutes" },
+                      { icon: "⭐", label: "100% Free" },
+                      { icon: "🛡️", label: "No Obligation" },
+                    ].map((b) => (
+                      <div
+                        key={b.label}
+                        className="flex items-center gap-1.5 px-3 py-1.5 bg-white rounded-full text-[#062f36] font-black text-[11px] border-2 border-[#0f6b72] shadow-[0_2px_8px_rgba(6,47,54,0.1)] shrink-0"
+                      >
+                        <span>{b.icon}</span>
+                        {b.label}
+                      </div>
+                    ))}
+                  </div>
+
+                  <p className="mt-3 text-center text-white/90 font-bold text-xs tracking-wide max-w-xs">
+                    Find out instantly if you meet the core requirements for a UK Spouse Visa.
+                  </p>
+                </div>
               </div>
             </Reveal>
           </div>

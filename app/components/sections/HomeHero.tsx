@@ -109,14 +109,13 @@
 //     </section>
 //   );
 // }
-
 import Link from "next/link";
 import Reveal from "../ui/Reveal";
 
 export default function HomeHero() {
   return (
     <section
-      className="relative overflow-hidden"
+      className="relative overflow-hidden min-h-[500px] lg:h-[60vh] flex items-center"
       style={{
         backgroundImage:
           "radial-gradient(circle at 70% 20%, rgba(244,196,0,0.2), transparent 20rem), linear-gradient(90deg, rgba(6,47,54,0.94), rgba(6,47,54,0.56)), url('/images/heroImg.png')",
@@ -143,7 +142,7 @@ export default function HomeHero() {
       {/* fade bottom */}
       <div className="absolute left-0 right-0 bottom-0 h-16 bg-gradient-to-b from-transparent to-white/96 pointer-events-none" />
 
-      <div className="relative z-10 flex items-center py-10 lg:py-12">
+      <div className="relative z-10 w-full py-6 lg:py-0">
         <div className="w-full max-w-[1120px] mx-auto px-4 grid grid-cols-1 lg:grid-cols-[minmax(0,660px)_minmax(300px,1fr)] gap-8 items-center">
           
           {/* Left panel */}
@@ -153,29 +152,24 @@ export default function HomeHero() {
                 Spouse &amp; Family Visa Solicitors
               </div>
               
-              <h2 className="text-3xl md:text-4xl lg:text-[clamp(2.2rem,5vw,3.8rem)] font-bold text-white leading-tight">
-                Family and Spouse Visa Solicitors in Manchester
-              </h2>
+              <h1 className="text-3xl md:text-4xl lg:text-[clamp(2rem,4.5vw,3.4rem)] font-bold text-white leading-tight tracking-tight">
+                Top UK Spouse Visa Solicitors in Manchester
+              </h1>
               
-              <p className="mt-4 text-white/90 text-base md:text-lg leading-relaxed max-w-[560px] font-medium">
+              <p className="mt-3 text-white/90 text-base md:text-lg leading-relaxed max-w-[560px] font-medium">
                 Bringing families together is our core mission. MSD Solicitors specialize in navigating complex UK Spouse Visa applications, transforming stressful legal requirements into seamless, successful journeys.
               </p>
               
-              <p className="mt-3 text-[#f4c400] text-lg font-black leading-relaxed max-w-[560px] flex items-center gap-2">
+              <p className="mt-2.5 text-[#f4c400] text-lg font-black leading-relaxed max-w-[560px] flex items-center gap-2">
                 <span className="inline-block w-2 h-2 rounded-full bg-[#f4c400] animate-ping" />
                 Proudly Maintaining a 99% Success Ratio
               </p>
 
-              <div className="flex flex-wrap items-center gap-4 mt-6">
-                {/* 
-                  Attraction Button (image_92f401.png): 
-                  Added subtle pulse scaling & looping white reflection glow sweep
-                */}
+              <div className="flex flex-wrap items-center gap-4 mt-5">
                 <Link 
                   href="/contact" 
                   className="relative overflow-hidden inline-flex items-center justify-center min-h-[52px] px-7 py-3 rounded-full font-black bg-[#f4c400] text-[#062f36] transition-all duration-300 text-sm animate-[subtle-pulse_3s_ease-in-out_infinite] hover:bg-[#ebd04b]"
                 >
-                  {/* Internal Shimmer Layer */}
                   <span 
                     className="absolute top-0 bottom-0 w-1/2 bg-gradient-to-r from-transparent via-white/40 to-transparent skew-x-[-25deg] pointer-events-none animate-[shimmer-sweep_2.5s_infinite]"
                     style={{ animationTimingFunction: 'linear' }}
@@ -197,24 +191,20 @@ export default function HomeHero() {
                 <img
                   src="/images/heroImg.png"
                   alt="Family illustration"
-                  className="w-full rounded-2xl shadow-[0_12px_40px_rgba(6,47,54,0.15)] max-h-[260px] lg:max-h-none object-cover"
+                  className="w-full rounded-2xl shadow-[0_12px_40px_rgba(6,47,54,0.15)] max-h-[220px] lg:max-h-[280px] object-cover"
                 />
                 
                 <div className="mt-4 flex flex-col items-center">
-                  
                   {/* Eligibility CTA button with smooth Floating Keyframe Animation */}
                   <div className="relative w-full group animate-[float_4s_ease-in-out_infinite]">
-                    {/* Ripple rings — behind the button */}
                     <span aria-hidden="true" className="btn-ripple" />
                     <span aria-hidden="true" className="btn-ripple-2" />
 
                     <Link
                       href="/eligibility/check"
-                      className="btn-eligibility relative z-10 flex items-center justify-center w-full min-h-[58px] px-6 text-lg font-black rounded-full overflow-hidden bg-[#f4c400] text-[#062f36] shadow-[0_10px_20px_rgba(244,196,0,0.25)] hover:scale-[1.02] transition-all duration-300"
+                      className="btn-eligibility relative z-10 flex items-center justify-center w-full min-h-[54px] px-6 text-lg font-black rounded-full overflow-hidden bg-[#f4c400] text-[#062f36] shadow-[0_10px_20px_rgba(244,196,0,0.25)] hover:scale-[1.02] transition-all duration-300"
                     >
-                      {/* shimmer sweep */}
                       <span aria-hidden="true" className="btn-shimmer" />
-                      {/* content */}
                       <span className="relative z-10 flex items-center gap-2">
                         <span className="arrow-nudge">
                           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -227,7 +217,7 @@ export default function HomeHero() {
                   </div>
 
                   {/* Badges shifted layout beneath the main button */}
-                  <div className="flex gap-2 justify-center mt-4 flex-wrap w-full">
+                  <div className="flex gap-2 justify-center mt-3.5 flex-wrap w-full">
                     {[
                       { icon: "⚡", label: "Takes 2 Minutes" },
                       { icon: "⭐", label: "100% Free" },
@@ -243,7 +233,7 @@ export default function HomeHero() {
                     ))}
                   </div>
 
-                  <p className="mt-3 text-center text-white/90 font-bold text-xs tracking-wide max-w-xs">
+                  <p className="mt-2.5 text-center text-white/90 font-bold text-xs tracking-wide max-w-xs">
                     Find out instantly if you meet the core requirements for a UK Spouse Visa.
                   </p>
                 </div>
